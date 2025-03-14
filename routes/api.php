@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\V1\AdController;
 use App\Http\Controllers\Api\V1\AuthController;
 use App\Http\Controllers\Api\V1\CategoryController;
 use App\Http\Controllers\Api\V1\RegionController;
@@ -29,4 +30,5 @@ Route::prefix('v1')->group(function () {
         Route::get('tags', [TagController::class, 'index']);
         Route::get('categories', [CategoryController::class, 'index']);
     });
+    Route::apiResource('ads', AdController::class);
 });
